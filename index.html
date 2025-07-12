@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robot Control Interface</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.9.0/dist/nipplejs.min.js"></script>
+
+
+</head>
+<body>
+  <header><h1>Robot Control Interface</h1></header>
+
+  <section class="control-panel">
+    <h2>Robot Controls</h2>
+    <div class="controls">
+      <button id="forwardBtn" onmousedown="sendCommand('V0', 1)" onmouseup="sendCommand('V0', 0)">▲</button>
+      <div class="middle-controls">
+        <button id="leftBtn" onmousedown="sendCommand('V1', 1)" onmouseup="sendCommand('V1', 0)">◀</button>
+        <button id="stopBtn" onclick="sendCommand('V2', 1)" class="stop">■</button>
+        <button id="rightBtn" onmousedown="sendCommand('V3', 1)" onmouseup="sendCommand('V3', 0)">▶</button>
+      </div>
+      <button id="backwardBtn" onmousedown="sendCommand('V4', 1)" onmouseup="sendCommand('V4', 0)">▼</button>
+    </div>
+
+    <div class="speed-control">
+      <h3>Speed Control</h3>
+      <input type="range" id="speedSlider" min="0" max="255" value="128" onchange="setSpeed()" />
+      <p>Speed: <span id="speedValue">128</span></p>
+    </div>
+
+    <div class="robot-status">
+      <h3>Robot Status</h3>
+      <div class="led-indicator off" id="statusLED"></div>
+      <p id="statusText">Stopped</p>
+    </div>
+
+    <div class="connection-status">
+      <h3>Connection</h3>
+      <div class="led-indicator off" id="connLED"></div>
+      <p id="connText">Disconnected</p>
+    </div>
+    <div id="joystick-zone"></div>
+
+  </section>
+
+  <audio id="beep-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

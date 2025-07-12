@@ -1,0 +1,102 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.control-panel {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  color: #1e3a8a;
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+.controls button {
+  font-size: 2rem;
+  padding: 15px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.controls button:hover {
+  background-color: #2563eb;
+}
+
+.middle-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button.stop {
+  background-color: #ef4444;
+}
+
+button.stop:hover {
+  background-color: #dc2626;
+}
+
+.speed-control input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.speed-control p {
+  font-size: 1rem;
+  margin: 5px;
+}
+
+.robot-status, .connection-status {
+  margin-top: 20px;
+}
+
+.led-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.led-indicator.on {
+  background-color: #10b981;
+}
+
+.led-indicator.off {
+  background-color: #ef4444;
+}
+#joystick-zone {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+  position: relative;
+}
